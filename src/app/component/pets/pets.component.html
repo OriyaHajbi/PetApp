@@ -1,0 +1,40 @@
+<ng-container *ngIf="pets.length !== 0">
+    <div class="container">
+        <div class="card-table">
+            <div class="card-product">
+                <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th>number</th>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Type</th>
+                            <th>Color</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let pet of pets; let i = index">
+                            <td>{{i+1}}</td>
+                            <td>{{pet.id}}</td>
+                            <td>{{pet.name}}</td>
+                            <td style="width: 25%;">{{pet.age}}</td>
+                            <td style="width: 12%;">{{pet.type}}</td>
+                            <td style="width: 12%;">{{pet.color}}</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<!-- empty cart -->
+<ng-container *ngIf="pets.length === 0">
+    <div class="center">
+        <h4>you doesnt have pets!</h4>
+        <h6>add Pets now</h6>
+        <button routerLink="/petform" class="btn btn-success">Add Pets</button>
+    </div>
+</ng-container>

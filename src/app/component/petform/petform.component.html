@@ -1,0 +1,35 @@
+<div class="container form-control form">
+    <div class="form-group">
+        <label for="nameInput"><strong>Name</strong></label>
+        <input type="text" maxlength="25" class="form-control" id="nameInput" name="nameInput" required=""
+            placeholder="Enter your Pet name" [(ngModel)]="nameInput">
+    </div>
+    <div class="form-group">
+        <label for="ageInput"><strong>Age</strong></label>
+        <input type="number" min="0" max="25" class="form-control" id="ageInput" required name="ageInput"
+            placeholder="Enter your Pet Age" [(ngModel)]="ageInput">
+    </div>
+    <div class="form-group">
+        <label for="typeInput"><strong>Type</strong></label>
+        <select class="form-control" id="typeInput" required name="typeInput" [(ngModel)]="typeInput">
+            <option value="" disabled selected>Select your Pet</option>
+            <option *ngFor="let pet of pets" [value]="pet">{{pet}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="colorInput"><strong>Color</strong></label>
+
+        <div class="left">
+            <ng-container *ngFor="let color of colors">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="color" value={{color}}
+                        [(ngModel)]="colorInput">
+                    <label class="form-check-label" for="inlineRadio2">{{color}} </label>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button class="btn btn-success" type="button" (click)=createNewPet()>Submit</button>
+    </div>
+</div>

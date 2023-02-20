@@ -1,0 +1,16 @@
+.form {
+    width: 60%;
+    margin-top: 5%;
+    border: 1px solid black;
+}
+
+.left {
+    display: block;
+    margin-left: 10%;
+}
+
+input,
+select {
+    background-color: #e3f2fd;
+    border: 1px black solid;
+}
